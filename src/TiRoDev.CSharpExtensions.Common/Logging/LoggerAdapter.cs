@@ -6,10 +6,8 @@ public class LoggerAdapter<TType> : ILoggerAdapter<TType>
 {
     private readonly ILogger<TType> _logger;
 
-    public LoggerAdapter(ILogger<TType> logger)
-    {
-        _logger = logger;
-    }
+    public LoggerAdapter(ILogger<TType> logger) 
+        => _logger = logger;
 
     public void LogInformation(string? message, params object?[] args) => 
         _logger.LogInformation(message, args);
