@@ -9,6 +9,9 @@ public class LoggerAdapter<TType> : ILoggerAdapter<TType>
     public LoggerAdapter(ILogger<TType> logger) 
         => _logger = logger;
 
+    public void Log(LogLevel logLevel, Exception? exception, string? message, object? args) => 
+        _logger.Log(logLevel, exception, message, args);
+
     public void LogInformation(string? message, params object?[] args) => 
         _logger.LogInformation(message, args);
 
